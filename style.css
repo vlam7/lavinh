@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+body, html, .container {
+  background: url("Dark Green Background.png");
+  color: #8C7853;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 10.5);
+}
+
+a, button {
+  cursor: pointer;
+  position: relative;
+  text-decoration: none; /* Added to remove the default underline */
+}
+
+nav {
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  width: 250px;
+}
+
+.navigation {
+  position: fixed;
+  right: -500px;
+  width: 350px;
+  height: 100%;
+  background-color: #252E2C;
+  transition: .5s;
+}
+
+.navigation ul li {
+  color: #968258;
+  text-align: right;
+  text-transform: uppercase;
+  list-style-type: none;
+  font-size: 1.5em;
+  padding: 20px 30px;
+  border-bottom: 1pt solid #252525;
+  position: relative;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3), -2px -2px 4px rgba(0, 0, 0, 0.8);
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+
+.navigation ul li:hover {
+  color: #968258;
+  text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.5), -2px -2px 6px rgba(0, 0, 0, 0.9);
+}
+
+.navigation ul li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: #968258; /* Highlight color */
+  transition: width 0.2s ease-in-out, left 0.2s ease-in-out; /* Added for smooth width and left transition */
+}
+
+.navigation ul li:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.menu, .bar {
+  position: fixed;
+}
+
+.menu {
+  display: block;
+  top: 5%;
+  left: 95%;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-50%);
+  border: 0;
+  background: 0 0;
+}
+
+.bar {
+  top: 3px;
+  background:  linear-gradient(to top, #83724e, #b0a878, #81704c), /* Metal gradient with color #968258 */
+  linear-gradient(to right, #555, #777, #555); /* Metal texture gradient */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 10.5);
+  width: 100%;
+  height: 4px;
+  transition: all .3s ease-in;
+  left: -35px;
+  transform: rotate(45deg);
+}
+
+#bar2 {
+  top: 12px;
+  right: 35px;
+  transform: rotate(-45deg);
+}
+
+#bar3 {
+  top: 19px;
+  right: -35px;
+  transform: rotate(45deg);
+}
+
+.navigation.active {
+  right: 0;
+}
+
+.menu.open #bar1 {
+  background-color: #65573b;
+  transform: rotate(45deg) translate(6px, 5px);
+}
+
+.menu.open #bar2 {
+  background-color: transparent;
+}
+
+.menu.open #bar3 {
+  background-color: #65573b;
+  transform: rotate(-45deg) translate(6px, -5px);
+}
+
+body, iframe, container {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+}
+
+#sketch-container {
+  width: 70px; /* Adjust the width based on your preference */
+  height: 70px; /* Adjust the height based on your preference */
+  position: fixed;
+  top: 10px; /* Adjust the top position based on your preference */
+  left: 50px; /* Adjust the left position based on your preference */
+  z-index: 1; /* Ensure the logo is on top of other elements */
+}
+
+footer{
+  background-color: #8C7853, transparent;
+}
+
+.footerContainer{
+  width: 100%;
+  padding: 80px 30px 20px;
+}
+.hidden {
+  opacity: 0;
+  transition: all 2s;
+}
+
+.show {
+  opacity: 1;
+}
+
+
