@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+@font-face {
+  font-family: 'Catchye';
+  src: url('catchye.otf') format('opentype');
+}
+body, html, .container {
+  background: url("Dark Green Background.png");
+  color: #8C7853;
+  padding: 0;
+  margin: 0; 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS',  sans-serif;
+  font-family: 'Catchye', sans-serif;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 10.5);
+}
+
+a, button {
+  cursor: pointer;
+  position: relative;
+  text-decoration: none; /* Added to remove the default underline */
+}
+
+nav {
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  width: 250px;
+}
+
+#wrapper{
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  animation: rotate 16s infinite linear;
+}
+
+@keyframes rotate{
+  100%{
+    transform: rotateX(360deg) rotateY(360deg);
+
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  margin-top: 10%; /* Half of height */
+  left: 50%;
+  border-radius: 50%;
+  opacity: 20;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.fade-in {
+  position: absolute;
+  font-family: 'Catchye', sans-serif;
+  font-size: 78px; /* Adjust the font size as needed */
+  color: linear-gradient(to 90deg, #83724e, #b0a878, #81704c), /* Metal gradient with color #968258 */
+  linear-gradient(to top, #555, #777, #555); /* Set your desired text color */
+  border-radius: 50%;
+  top: 23%;
+  left: 42%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fade-in 5s; /* Add animation for a dynamic effect */
+  transform-style: preserve-3d;
+}
+
+@keyframes fade-in{
+  0%{opacity: 0;}
+  100%{opacity:1;}
+}
+
+.animated-text {
+  position: absolute;
+  font-family: 'Catchye', sans-serif;
+  font-size: 78px; /* Adjust the font size as needed */
+  color: linear-gradient(to 90deg, #83724e, #b0a878, #81704c), /* Metal gradient with color #968258 */
+  linear-gradient(to top, #555, #777, #555); /* Set your desired text color */
+  top: 18%;
+  left: 33%;
+  padding: 2px 210px;
+  display: inline-box;
+  background: transparent;
+  height: 95px;
+  overflow: hidden;
+  animation: fade-in 5s; /* Add animation for a dynamic effect */
+}
+
+.animated-text > div > div {
+  padding: 4 12px;
+  height: 54px;
+}
+.line {
+  position: relative;
+  font-size: 78px;
+  top: 13%;
+  left: 56%;
+}
+
+.line:first-child {
+  animation: anim 20s ease-in-out infinite;
+}
+
+.line.reverse {
+  animation: animReverse 20s ease-in-out infinite;
+}
+
+@keyframes anim {
+  0% {
+    margin-top: 0px;
+  }
+  10% {
+    margin-top: 0px;
+  }
+  20% {
+    margin-top: -90px;
+  }
+  30% {
+    margin-top: -90px;
+  }
+  40% {
+    margin-top: -180px;
+  }
+  60% {
+    margin-top: -180px;
+  }
+  70% {
+    margin-top: -90px;
+  }
+  80% {
+    margin-top: -90px;
+  }
+  90% {
+    margin-top: 0px;
+  }
+  0% {
+    margin-top: 0px;
+  }
+}
+
+@keyframes animReverse {
+  0% {
+    margin-top: 0px;
+  }
+  10% {
+    margin-top: 0px;
+  }
+  20% {
+    margin-top: -90px;
+  }
+  30% {
+    margin-top: -90px;
+  }
+  40% {
+    margin-top: -180px;
+  }
+  60% {
+    margin-top: -180px;
+  }
+  70% {
+    margin-top: -90px;
+  }
+  80% {
+    margin-top: -90px;
+  }
+  90% {
+    margin-top: 0px;
+  }
+  0% {
+    margin-top: 0px;
+  }
+}
+
+.circle{
+  position: fixed;
+  background-color: transparent;
+  height:200px;
+  width:200px;
+  top: 40%;
+  left: 45%;
+  border-radius: 50%;
+  box-shadow: insert 0 0 10px 10px #3c3f5880;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+.border{
+  width:210px;
+  height:210px;
+  border:2px solid #968258;
+  border-radius:100%;
+  position:absolute;
+  animation:spin 10s linear calc(-4s*var(--i)) infinite;
+}
+
+.border2{
+  width:210px;
+  height:210px;
+  border:2px solid #968258;
+  border-radius:100%;
+  position:absolute;
+  animation:spin2 10s linear calc(-4s*var(--i)) infinite;
+}
+
+.loadingText{
+  position:absolute;
+  font-size: large;
+}
+@keyframes spin{
+  0%{
+    transform: rotateX(0) rotateY(20deg) rotateZ(0);
+  }
+  25%{
+    transform: rotateX(360deg) rotateY(20deg) rotateZ(90deg);
+  }
+  50%{
+    transform: rotateX(0) rotateY(20deg) rotateZ(180deg);
+  }
+  75%{
+    transform: rotateX(-360deg) rotateY(20deg) rotateZ(270deg);
+  }
+  100%{
+    transform: rotateX(0) rotateY(20deg) rotateZ(360deg);
+  }
+}
+
+@keyframes spin2 {
+  0% {
+    transform: rotateX(0) rotateY(20deg) rotateZ(360deg);
+  }
+  25% {
+    transform: rotateX(-360deg) rotateY(20deg) rotateZ(270deg);
+  }
+  50% {
+    transform: rotateX(0) rotateY(20deg) rotateZ(180deg);
+  }
+  75% {
+    transform: rotateX(360deg) rotateY(20deg) rotateZ(90deg);
+  }
+  100% {
+    transform: rotateX(0) rotateY(20deg) rotateZ(0);
+  }
+}
+
+.navigation {
+  position: fixed;
+  right: -500px;
+  width: 350px;
+  height: 100%;
+  background-color: #252E2C;
+  transition: .5s;
+}
+
+.navigation ul li {
+  color: #968258;
+  text-align: right;
+  text-transform: uppercase;
+  list-style-type: none;
+  font-size: 1.5em;
+  padding: 20px 30px;
+  border-bottom: 1pt solid #252525;
+  position: relative;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3), -2px -2px 4px rgba(0, 0, 0, 0.8);
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+
+.navigation ul li:hover {
+  color: #968258;
+  text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.5), -2px -2px 6px rgba(0, 0, 0, 0.9);
+}
+
+.navigation ul li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: #968258; /* Highlight color */
+  transition: width 0.2s ease-in-out, left 0.2s ease-in-out; /* Added for smooth width and left transition */
+}
+
+.navigation ul li:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.menu, .bar {
+  position: fixed;
+}
+
+.menu {
+  display: block;
+  top: 5%;
+  left: 95%;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-50%);
+  border: 0;
+  background: 0 0;
+}
+
+.bar {
+  top: 3px;
+  background:  linear-gradient(to top, #83724e, #b0a878, #81704c), /* Metal gradient with color #968258 */
+  linear-gradient(to right, #555, #777, #555); /* Metal texture gradient */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 10.5);
+  width: 100%;
+  height: 4px;
+  transition: all .3s ease-in;
+  left: -35px;
+  transform: rotate(45deg);
+}
+
+#bar2 {
+  top: 12px;
+  right: 35px;
+  transform: rotate(-45deg);
+}
+
+#bar3 {
+  top: 19px;
+  right: -35px;
+  transform: rotate(45deg);
+}
+
+.navigation.active {
+  right: 0;
+}
+
+.menu.open #bar1 {
+  background-color: #65573b;
+  transform: rotate(45deg) translate(6px, 5px);
+}
+
+.menu.open #bar2 {
+  background-color: transparent;
+}
+
+.menu.open #bar3 {
+  background-color: #65573b;
+  transform: rotate(-45deg) translate(6px, -5px);
+}
+
+body, iframe, container {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+}
+
+#sketch-container {
+  width: 70px; /* Adjust the width based on your preference */
+  height: 70px; /* Adjust the height based on your preference */
+  position: fixed;
+  top: 10px; /* Adjust the top position based on your preference */
+  left: 50px; /* Adjust the left position based on your preference */
+  z-index: 1; /* Ensure the logo is on top of other elements */
+}
+
+footer{
+  background-color: #8C7853, transparent;
+  position: fixed;
+  bottom: 30px; /* Adjust this value based on your preference */
+}
+
+.footerContainer{
+  width: 100%;
+  text-align: center;
+  margin-top: 100px; /* Adjust this value based on your preference */
+}
+
+.hidden {
+  opacity: 0;
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+}
+
+
